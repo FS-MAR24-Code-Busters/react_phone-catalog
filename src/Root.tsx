@@ -2,7 +2,6 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { App } from './App';
 import { store } from './app/store';
-import { NotFoundPage } from './pages/NotFoundPage';
 
 export const Root = () => (
   <HashRouter>
@@ -15,31 +14,31 @@ export const Root = () => (
           <Route path="phones">
             <Route index element={''} />
             <Route path=":productId" element={''} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={''} />
           </Route>
 
           <Route path="tablets">
             <Route index element={''} />
             <Route path=":productId" element={''} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={''} />
           </Route>
 
           <Route path="accessories">
             <Route index element={''} />
             <Route path=":productId" element={''} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={''} />
           </Route>
 
           <Route path="favourites">
             <Route index element={''} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={''} />
           </Route>
 
           <Route path="cart">
             <Route index element={''} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={''} />
           </Route>
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={''} />
         </Route>
       </Routes>
     </Provider>

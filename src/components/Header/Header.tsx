@@ -1,3 +1,4 @@
+// @ts-ignore
 import styles from './Header.module.scss';
 import { useMemo, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';

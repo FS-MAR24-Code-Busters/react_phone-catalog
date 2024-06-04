@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import './ComingSoon.scss';
 import React from 'react';
+// @ts-ignore
 import comingSoonImg from '../../assets/coming-soon.png';
 
 type Props = {
