@@ -1,11 +1,11 @@
-export const BASE_URL
-  = 'https://mate-academy.github.io/react_phone-catalog/_new';
+export const BASE_URL =
+  'https://mate-academy.github.io/react_phone-catalog/_new';
 
 // export const BASE_URL
 //   = '../../public/api/phones.json';
 
 function wait(delay: number) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(resolve, delay);
   });
 }
@@ -28,7 +28,7 @@ function request<T>(
 
   return wait(100)
     .then(() => fetch(BASE_URL + url, options))
-    .then((response) => {
+    .then(response => {
       if (!response.ok) {
         throw new Error();
       }

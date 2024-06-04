@@ -24,9 +24,12 @@ export const productsInit = createAsyncThunk('products/fetch', () => {
   return getProducts();
 });
 
-export const productDetailsInit = createAsyncThunk('productDetails/fetch', (id: string) => {
-  return getProductDetails(id);
-});
+export const productDetailsInit = createAsyncThunk(
+  'productDetails/fetch',
+  (id: string) => {
+    return getProductDetails(id);
+  },
+);
 
 export const productsSLicer = createSlice({
   name: 'products',
@@ -46,7 +49,7 @@ export const productsSLicer = createSlice({
     },
   },
   extraReducers(builder) {
-    builder.addCase(productsInit.pending, (state) => {
+    builder.addCase(productsInit.pending, state => {
       return {
         ...state,
         loading: true,
@@ -59,14 +62,14 @@ export const productsSLicer = createSlice({
         items: action.payload,
       };
     });
-    builder.addCase(productsInit.rejected, (state) => {
+    builder.addCase(productsInit.rejected, state => {
       return {
         ...state,
         loading: false,
         hasError: 'Error',
       };
     });
-    builder.addCase(productDetailsInit.pending, (state) => {
+    builder.addCase(productDetailsInit.pending, state => {
       return {
         ...state,
         loading: true,
@@ -80,7 +83,7 @@ export const productsSLicer = createSlice({
         loading: false,
       };
     });
-    builder.addCase(productDetailsInit.rejected, (state) => {
+    builder.addCase(productDetailsInit.rejected, state => {
       return {
         ...state,
         loaded: false,

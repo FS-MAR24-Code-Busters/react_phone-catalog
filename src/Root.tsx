@@ -1,11 +1,8 @@
-import {
-  HashRouter, Navigate, Route, Routes,
-} from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { App } from './App';
 import { store } from './app/store';
 import { NotFoundPage } from './pages/NotFoundPage';
-
 
 export const Root = () => (
   <HashRouter>
@@ -39,7 +36,7 @@ export const Root = () => (
           </Route>
 
           <Route path="cart">
-            <Route index element={""} />
+            <Route index element={''} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />

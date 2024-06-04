@@ -1,4 +1,4 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import productsReducer from '../features/productSlicer';
 import cartReducer from '../features/cartSlicer';
 import favouritesReducer from '../features/favouritesSlicer';
@@ -15,10 +15,3 @@ export const store = configureStore({
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
-
-export type AppThunk<ReturnType = void> = ThunkAction<
-ReturnType,
-RootState,
-unknown,
-Action<string>
->;

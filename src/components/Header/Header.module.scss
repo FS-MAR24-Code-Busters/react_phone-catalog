@@ -73,15 +73,15 @@
     }
 
     &:hover .burgerSpanOne {
-      animation: changeWidth 2s ease infinite;
+      animation: change-width 2s ease infinite;
     }
 
     &:hover .burgerSpanTwo {
-      animation: changeWidth1 2s ease infinite;
+      animation: change-width-1 2s ease infinite;
     }
 
     &:hover .burgerSpanThree {
-      animation: changeWidth2 2s ease infinite;
+      animation: change-width-2 2s ease infinite;
     }
   }
 
@@ -162,7 +162,7 @@
   color: $black;
 }
 
-@keyframes changeWidth {
+@keyframes change-width {
   0% {
     width: 26px;
   }
@@ -180,7 +180,7 @@
   }
 }
 
-@keyframes changeWidth1 {
+@keyframes change-width-1 {
   0% {
     width: 26px;
   }
@@ -198,7 +198,7 @@
   }
 }
 
-@keyframes changeWidth2 {
+@keyframes change-width-2 {
   0% {
     width: 20px;
   }

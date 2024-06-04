@@ -1,4 +1,3 @@
-// @ts-ignore
 import styles from './Header.module.scss';
 import { useMemo, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
@@ -10,16 +9,17 @@ export const Header = () => {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const { pathname } = useLocation();
 
-  const isSearchShown = pathname === '/phones'
-    || pathname === '/tablets'
-    || pathname === '/accessories'
-    || pathname === '/favourites';
+  const isSearchShown =
+    pathname === '/phones' ||
+    pathname === '/tablets' ||
+    pathname === '/accessories' ||
+    pathname === '/favourites';
 
   const isCartOpen = pathname !== '/cart';
 
-  const favouriteProducts = useAppSelector((state) => state.favourites.items);
+  const favouriteProducts = useAppSelector(state => state.favourites.items);
 
-  const cartProducts = useAppSelector((state) => state.cartProducts.items);
+  const cartProducts = useAppSelector(state => state.cartProducts.items);
 
   const cartQuantity = useMemo(() => {
     return cartProducts.reduce((acc, cartItem) => {
@@ -28,10 +28,10 @@ export const Header = () => {
   }, [cartProducts]);
 
   return (
-    <header className={styles.header} id='header'>
+    <header className={styles.header} id="header">
       <div className={styles.containerLeft}>
         <button
-          type='button'
+          type="button"
           className={styles.burger}
           onClick={() => setIsMenuShown(true)}
         >
@@ -40,7 +40,7 @@ export const Header = () => {
           <span className={`${styles.burgerSpan} ${styles.burgerSpanThree}`} />
         </button>
 
-        <Link to='/' className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           <div className={styles.logoImage} />
         </Link>
 
@@ -49,30 +49,30 @@ export const Header = () => {
         {isCartOpen && (
           <nav
             className={styles.navigation}
-            role='navigation'
-            aria-label='main navigation'
+            role="navigation"
+            aria-label="main navigation"
           >
             <ul className={styles.list}>
               <li>
-                <NavLink className={styles.link} to='/'>
+                <NavLink className={styles.link} to="/">
                   Home
                 </NavLink>
               </li>
 
               <li>
-                <NavLink className={styles.link} to='/phones'>
+                <NavLink className={styles.link} to="/phones">
                   Phones
                 </NavLink>
               </li>
 
               <li>
-                <NavLink className={styles.link} to='/tablets'>
+                <NavLink className={styles.link} to="/tablets">
                   Tablets
                 </NavLink>
               </li>
 
               <li>
-                <NavLink className={styles.link} to='/accessories'>
+                <NavLink className={styles.link} to="/accessories">
                   Accessories
                 </NavLink>
               </li>
@@ -85,7 +85,7 @@ export const Header = () => {
         {isSearchShown && <SearchField />}
 
         {isCartOpen && (
-          <NavLink to='/favourites' className={styles.iconLink}>
+          <NavLink to="/favourites" className={styles.iconLink}>
             <div className={`${styles.iconImage} icon icon--favourites`}>
               {!!favouriteProducts.length && (
                 <div className={styles.fav}>
@@ -98,13 +98,11 @@ export const Header = () => {
           </NavLink>
         )}
 
-        <NavLink to='/cart' className={styles.iconLink}>
+        <NavLink to="/cart" className={styles.iconLink}>
           <div className={`${styles.iconImage} icon icon--cart`}>
             {!!cartProducts.length && (
               <div className={styles.fav}>
-                <span className={styles.amount}>
-                  {cartQuantity}
-                </span>
+                <span className={styles.amount}>{cartQuantity}</span>
               </div>
             )}
           </div>

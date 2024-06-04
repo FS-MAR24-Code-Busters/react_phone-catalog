@@ -7,8 +7,8 @@ const storedCart = localStorage.getItem('cartProducts');
 type CartItem = Product & { quantity: number };
 
 type CartState = {
-  items: CartItem[],
-  total: number,
+  items: CartItem[];
+  total: number;
 };
 
 const cartState: CartState = {
@@ -61,7 +61,10 @@ export const cartProductsSlicer = createSlice({
 });
 
 export const {
-  setCartProducts, deleteCartProducts, increaseQuantity, decreaseQuantity,
+  setCartProducts,
+  deleteCartProducts,
+  increaseQuantity,
+  decreaseQuantity,
 } = cartProductsSlicer.actions;
 
 export default cartProductsSlicer.reducer;

@@ -26,7 +26,7 @@ export const productPriceSlicer = createSlice({
   },
 });
 
-export const { addProductPrice, deleteProductPrice }
-  = productPriceSlicer.actions;
+export const { addProductPrice, deleteProductPrice } =
+  productPriceSlicer.actions;
 
 export default productPriceSlicer.reducer;

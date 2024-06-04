@@ -25,13 +25,13 @@ export const favouritesSlicer = createSlice({
       saveToLocalStorage(state);
     },
     deleteFavouritesProducts: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.items = state.items.filter(item => item.id !== action.payload);
       saveToLocalStorage(state);
     },
   },
 });
 
-export const { setFavouritesProducts, deleteFavouritesProducts }
-  = favouritesSlicer.actions;
+export const { setFavouritesProducts, deleteFavouritesProducts } =
+  favouritesSlicer.actions;
 
 export default favouritesSlicer.reducer;
