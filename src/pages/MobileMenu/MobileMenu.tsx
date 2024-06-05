@@ -2,7 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import cn from 'classnames';
 import React, { useState } from 'react';
-import './MobileMenu.scss';
+import styles from './MobileMenu.module.css';
 import { GITHUB_URL } from '../../helpers/constants';
 import { ComingSoon } from '../../components/ComingSoon/ComingSoon';
 
@@ -27,105 +27,107 @@ export const MobileMenu: React.FC<Props> = ({
 
   return (
     <div
-      className={cn('MobileMenu', {
-        'menu-shown': isMenuShown,
+      className={cn(styles.mobileMenu, {
+        [styles.menuShown]: isMenuShown,
       })}
     >
-      <div className="MobileMenu__top">
+      <div className={styles.mobileMenuTop}>
         <Link
           to="/"
-          className="MobileMenu__logo-link"
+          className={styles.mobileMenuLogoLink}
           onClick={() => setIsMenuShown(false)}
         >
-          <div className="MobileMenu__logo-link-image" />
+          <div className={styles.mobileMenuLogoLinkImage} />
         </Link>
 
         <button
           type="button"
-          className="MobileMenu__close-link"
+          className={styles.mobileMenuCloseLink}
           onClick={() => setIsMenuShown(false)}
         >
-          <div className="MobileMenu__close-link-image icon icon--remove" />
+          <div
+            className={`${styles.mobileMenuCloseLinkImage} icon icon--remove`}
+          />
         </button>
       </div>
 
-      <div className="MobileMenu__container">
-        <nav className="MobileMenu__nav">
-          <ul className="MobileMenu__nav-list">
-            <li className="MobileMenu__nav-list-item">
+      <div className={styles.mobileMenuContainer}>
+        <nav className={styles.mobileMenuNav}>
+          <ul className={styles.mobileMenuNavList}>
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to="/"
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 onClick={() => setIsMenuShown(false)}
               >
                 Home
               </Link>
             </li>
 
-            <li className="MobileMenu__nav-list-item">
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to="/phones"
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 onClick={() => setIsMenuShown(false)}
               >
                 Phones
               </Link>
             </li>
 
-            <li className="MobileMenu__nav-list-item">
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to="/tablets"
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 onClick={() => setIsMenuShown(false)}
               >
                 Tablets
               </Link>
             </li>
 
-            <li className="MobileMenu__nav-list-item">
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to="/accessories"
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 onClick={() => setIsMenuShown(false)}
               >
                 Accessories
               </Link>
             </li>
 
-            <li className="MobileMenu__nav-list-item">
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to="/favourites"
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 onClick={() => setIsMenuShown(false)}
               >
                 Favourites
               </Link>
             </li>
 
-            <li className="MobileMenu__nav-list-item">
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to="/cart"
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 onClick={() => setIsMenuShown(false)}
               >
                 Cart
               </Link>
             </li>
 
-            <li className="MobileMenu__nav-list-item">
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to={pathname}
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 onClick={handleLinkClick}
               >
                 Contact us
               </Link>
             </li>
 
-            <li className="MobileMenu__nav-list-item">
+            <li className={styles.mobileMenuNavListItem}>
               <Link
                 to={GITHUB_URL}
-                className="MobileMenu__nav-list-link"
+                className={styles.mobileMenuNavListLink}
                 target="_blank"
                 onClick={() => setIsMenuShown(false)}
               >

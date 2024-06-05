@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import debounce from 'lodash.debounce';
-import './SearchField.scss';
+import styles from './SearchField.module.css';
 import classNames from 'classnames';
 import { getSearchWith } from '../../helpers/searchHelper';
 import { SearchParams } from '../../types/Categories';
@@ -11,11 +11,11 @@ export const SearchField = () => {
   const { pathname } = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get(SearchParams.Query) || '';
-  const [isSearchFocused, setIsSeacrhFocused] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [inputQuery, setInputQuery] = useState(query);
 
   const titleField = useRef<HTMLInputElement>(null);
-  const firtsRender = useRef(true);
+  const firstRender = useRef(true);
 
   useEffect(() => {
     if (titleField.current && isSearchFocused) {
@@ -24,8 +24,8 @@ export const SearchField = () => {
   }, [isSearchFocused]);
 
   useEffect(() => {
-    if (firtsRender.current) {
-      firtsRender.current = false;
+    if (firstRender.current) {
+      firstRender.current = false;
 
       return;
     }
@@ -44,7 +44,7 @@ export const SearchField = () => {
     debouncedSearch(event.target.value);
   };
 
-  const handleClearSeacrh = () => {
+  const handleClearSearch = () => {
     setInputQuery('');
     setSearchParams(getSearchWith({ query: null }, searchParams));
   };
@@ -52,31 +52,31 @@ export const SearchField = () => {
   return (
     <label
       htmlFor="search"
-      className={classNames('SearchField', {
-        focus: isSearchFocused,
+      className={classNames(styles.searchField, {
+        [styles.focus]: isSearchFocused,
       })}
     >
       <input
         id="search"
         type="text"
-        className={classNames('SearchField__input', {
-          focus: isSearchFocused,
+        className={classNames(styles.searchFieldInput, {
+          [styles.focus]: isSearchFocused,
         })}
         placeholder={`Search in ${pathname.slice(1)}...`}
         ref={titleField}
         autoComplete="off"
         value={inputQuery}
         onChange={handleQueryChange}
-        onBlur={() => setIsSeacrhFocused(false)}
-        onFocus={() => setIsSeacrhFocused(true)}
+        onBlur={() => setIsSearchFocused(false)}
+        onFocus={() => setIsSearchFocused(true)}
       />
 
       {!inputQuery ? (
         <button
           type="button"
-          className="SearchField__button"
+          className={styles.searchFieldButton}
           aria-label="search"
-          onClick={() => setIsSeacrhFocused(true)}
+          onClick={() => setIsSearchFocused(true)}
         >
           <div className="icon icon--search" />
         </button>
@@ -84,9 +84,9 @@ export const SearchField = () => {
         <button
           data-cy="searchDelete"
           type="button"
-          className="SearchField__button"
+          className={styles.searchFieldButton}
           aria-label="search"
-          onClick={handleClearSeacrh}
+          onClick={handleClearSearch}
         >
           <div className="icon icon--remove" />
         </button>

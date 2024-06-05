@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import './ComingSoon.scss';
+/* ComingSoon.tsx */
 import React from 'react';
-// @ts-ignore
+import styles from './ComingSoon.module.css';
 import comingSoonImg from '../../assets/coming-soon.png';
 
 type Props = {
@@ -10,21 +9,21 @@ type Props = {
 
 export const ComingSoon: React.FC<Props> = ({ onClose }) => {
   return (
-    <div className="ComingSoon">
-      <div className="ComingSoon__modal">
+    <div className={styles.ComingSoon}>
+      <div className={styles.ComingSoon__modal}>
         <button
           type="button"
-          className="ComingSoon__modal-button"
+          className={styles.ComingSoon__modal_button}
           onClick={() => onClose(false)}
         >
           <div className="icon icon--remove" />
         </button>
         <img
           src={comingSoonImg}
-          className="ComingSoon__modal-image"
+          className={styles.ComingSoon__modal_image}
           alt="Coming Soon"
         />
-        <p className="ComingSoon__modal-message">
+        <p className={styles.ComingSoon__modal_message}>
           Sorry, this feature has not been implemented yet!
         </p>
       </div>
