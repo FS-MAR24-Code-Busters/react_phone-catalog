@@ -19,12 +19,6 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 
-/*! Bundled license information:
-
-dompurify/dist/purify.es.mjs:
-  (*! @license DOMPurify 3.0.10 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.0.10/LICENSE *)
-*/
-
 /**
  * @license React
  * react-dom.production.min.js
@@ -86,7 +80,7 @@ dompurify/dist/purify.es.mjs:
  */
 
 /**
- * @remix-run/router v1.15.3
+ * @remix-run/router v1.16.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -97,7 +91,7 @@ dompurify/dist/purify.es.mjs:
  */
 
 /**
- * React Router DOM v6.22.3
+ * React Router DOM v6.23.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -108,7 +102,7 @@ dompurify/dist/purify.es.mjs:
  */
 
 /**
- * React Router v6.22.3
+ * React Router v6.23.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -116,4 +110,13 @@ dompurify/dist/purify.es.mjs:
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
+ */
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
